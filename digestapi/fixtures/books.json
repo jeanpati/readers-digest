@@ -1,0 +1,112 @@
+[
+  {
+    "model": "digestapi.book",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "isbn": "9780441013593",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/71wnTE8VUFL.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "title": "Do Androids Dream of Electric Sheep?",
+      "author": "Philip K. Dick",
+      "isbn": "9780345404473",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/71ZSVrZVE8L.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "title": "Neuromancer",
+      "author": "William Gibson",
+      "isbn": "9780441569595",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/61fc+UkBw6L.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "isbn": "9780553293357",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/81nGw1o6doL.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 5,
+    "fields": {
+      "user": 5,
+      "title": "Snow Crash",
+      "author": "Neal Stephenson",
+      "isbn": "9780553380958",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/51tO6JQH7wL._SX305_BO1,204,203,200_.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 6,
+    "fields": {
+      "user": 6,
+      "title": "Hyperion",
+      "author": "Dan Simmons",
+      "isbn": "9780553283686",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/71HWtVc5kZL.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "title": "The Left Hand of Darkness",
+      "author": "Ursula K. Le Guin",
+      "isbn": "9780441478125",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/91n6bh1nKBL.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "isbn": "9780345391803",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/81IMd+%2B5hmL.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 9,
+    "fields": {
+      "user": 3,
+      "title": "Stranger in a Strange Land",
+      "author": "Robert A. Heinlein",
+      "isbn": "9780441788385",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/71W-xwfDsWL.jpg"
+    }
+  },
+  {
+    "model": "digestapi.book",
+    "pk": 10,
+    "fields": {
+      "user": 4,
+      "title": "The War of the Worlds",
+      "author": "H.G. Wells",
+      "isbn": "9780486295060",
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/51REcqY83XL.jpg"
+    }
+  }
+]
