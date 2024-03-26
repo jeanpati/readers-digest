@@ -3,12 +3,20 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from digestapi.models import Book
 from .categories import CategorySerializer
+from datetime import datetime
+from digestapi.models import BookCategory
 
 
 class BookSerializer(serializers.ModelSerializer):
-    is_owner = serializers.SerializerMethodField()
+    # Override default serialization to replace foreign keys
+    # with expanded related resource. By default, this would
+    # be a list of integers (e.g. [2, 4, 9]).
     categories = CategorySerializer(many=True)
 
+    # Declare that an ad-hoc property should be included in JSON
+    is_owner = serializers.SerializerMethodField()
+
+    # Function containing instructions for ad-hoc property
     def get_is_owner(self, obj):
         # Check if the authenticated user is the owner
         return self.context["request"].user == obj.user
@@ -19,9 +27,10 @@ class BookSerializer(serializers.ModelSerializer):
             "id",
             "title",
             "author",
-            "isbn_number",
+            "isbn",
             "cover_image",
             "is_owner",
+            "user_id",
             "categories",
         ]
 
@@ -30,7 +39,11 @@ class BookViewSet(viewsets.ViewSet):
 
     def list(self, request):
         books = Book.objects.all()
-        serializer = BookSerializer(books, many=True, context={"request": request})
+        serializer = BookSerializer(
+            books,
+            many=True,
+            context={"request": request},  # Allow serializer to access request
+        )
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
@@ -46,7 +59,7 @@ class BookViewSet(viewsets.ViewSet):
         # Get the data from the client's JSON payload
         title = request.data.get("title")
         author = request.data.get("author")
-        isbn_number = request.data.get("isbn_number")
+        isbn = request.data.get("isbn")
         cover_image = request.data.get("cover_image")
 
         # Create a book database row first, so you have a
@@ -56,7 +69,7 @@ class BookViewSet(viewsets.ViewSet):
             title=title,
             author=author,
             cover_image=cover_image,
-            isbn_number=isbn_number,
+            isbn=isbn,
         )
 
         # Establish the many-to-many relationships
